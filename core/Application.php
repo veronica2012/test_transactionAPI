@@ -11,7 +11,6 @@ class Application extends Component
 
     protected $_components = [];
 
-
     private static $_selfInstance = null;
 
 
@@ -37,6 +36,7 @@ class Application extends Component
 
 
     public function processRequest() {
+
         $route = $this->getUrlManager()->getRoute($this->getRequest());
 
         $result = $this->runController($route);
@@ -57,28 +57,6 @@ class Application extends Component
         }
 
         $response->send();
-    }
-
-    /**
-     * @return UrlManager
-     */
-    public function getUrlManager() {
-        return $this->getComponent('urlManager');
-    }
-
-
-    /**
-     * @return Request
-     */
-    public function getRequest() {
-        return $this->getComponent('request');
-    }
-
-    /**
-     * @return Response
-     */
-    public function getResponse() {
-        return $this->getComponent('response');
     }
 
     public function runController($route = '/') {
@@ -138,6 +116,29 @@ class Application extends Component
         }
 
         return null;
+    }
+
+
+    /**
+     * @return UrlManager
+     */
+    public function getUrlManager() {
+        return $this->getComponent('urlManager');
+    }
+
+
+    /**
+     * @return Request
+     */
+    public function getRequest() {
+        return $this->getComponent('request');
+    }
+
+    /**
+     * @return Response
+     */
+    public function getResponse() {
+        return $this->getComponent('response');
     }
 
     public function getComponent($componentName) {

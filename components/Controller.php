@@ -17,8 +17,9 @@ class Controller extends Component
     public function runAction($id) {
 
         $id = $id ? $id : $this->defaultAction;
+        $id = trim($id, '/');
 
-        $isMethodNameValid = preg_match('/^[a-z0-9\\-_]+$/', $id) && strpos($id, '--') === false && trim($id, '-') === $id;
+        $isMethodNameValid = preg_match('/^[a-zA-Z0-9\\-_]+$/', $id) && strpos($id, '--') === false && trim($id, '-') === $id;
         if(!$isMethodNameValid) {
             throw new HttpException(404, "Unable to resolve {$this->id}/$id");
         }

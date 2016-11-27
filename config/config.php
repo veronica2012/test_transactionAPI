@@ -11,7 +11,8 @@ return [
         'urlManager' => [
             'class' => 'components/UrlManager',
             'rules' => [
-                ['controller' => 'transaction', 'allowedMethods' => ['POST']]
+                ['controller' => 'transaction', 'allowedMethods' => ['POST']],
+                ['controller' => 'report', 'allowedMethods' => ['GET']]
             ]
         ],
         'request' => [
