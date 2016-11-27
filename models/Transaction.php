@@ -50,7 +50,7 @@ class Transaction extends ActiveRecord {
 
 
     function getRandomCreateDate() {
-        $startDate = '2014-12-12';
+        $startDate = '2016-11-1';
         $min = strtotime($startDate);
         $max = time();
 
