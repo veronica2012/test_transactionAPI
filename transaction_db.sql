@@ -17,7 +17,7 @@ CREATE TABLE `transaction` (
   `status` enum('approved','rejected','','') NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `reject_reason` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 
 INSERT INTO `transaction` (`id`, `email`, `amount`, `status`, `create_date`, `reject_reason`) VALUES
 (1, 'email@gmail.com', '1000.00', 'rejected', '0000-00-00 00:00:00', 'You are not allowed to perform transaction'),
@@ -79,7 +79,23 @@ INSERT INTO `transaction` (`id`, `email`, `amount`, `status`, `create_date`, `re
 (57, 'test@tets.com', '12.20', 'rejected', '2016-07-10 05:35:57', 'You are not allowed to perform transaction'),
 (58, 'veronica.golskaya@gmail.com', '12.00', 'approved', '2015-12-11 20:23:10', NULL),
 (59, '122@gmail.com', '221.00', 'approved', '2016-06-11 18:43:05', NULL),
-(60, 'var@gmail.com', '123.00', 'approved', '2016-03-11 10:50:15', NULL);
+(60, 'var@gmail.com', '123.00', 'approved', '2016-03-11 10:50:15', NULL),
+(61, 'veronica.golskaya@gmail.com', '122.00', 'rejected', '2016-11-10 19:11:42', 'Fraud detected'),
+(62, 'veronica.golskaya@gmail.com', '21.00', 'rejected', '2016-11-25 06:42:42', 'I think I can''t believe you'),
+(63, 'email@cew.com', '22.00', 'approved', '2016-11-17 07:01:44', NULL),
+(64, 'email@cew.com', '212.00', 'rejected', '2016-11-27 18:17:38', 'I don''t want to log your transaction'),
+(65, 'veronica.golskaya@gmail.com', '22.00', 'rejected', '2016-11-03 20:52:19', 'I don''t like you'),
+(66, 'veronica.golskaya@gmail.com', '22.00', 'rejected', '2016-11-09 19:25:25', 'You are not allowed to perform transaction'),
+(67, 'veronica.golskaya@gmail.com', '22.00', 'approved', '2016-11-19 03:54:55', NULL),
+(68, 'mymail@gmail.com', '11.00', 'approved', '2016-11-14 08:50:27', NULL),
+(69, 'mymail@gmail.com', '44.00', 'rejected', '2016-11-10 08:07:36', 'You are not allowed to perform transaction'),
+(70, 'mymail@gmail.com', '33.00', 'rejected', '2016-11-12 23:59:48', 'Fraud detected'),
+(71, 'mymail@gmail.com', '33.00', 'rejected', '2016-11-24 08:27:10', 'Fraud detected'),
+(72, 'mymail@gmail.com', '2.00', 'rejected', '2016-11-01 07:48:31', 'You are not allowed to perform transaction'),
+(73, 'mymail@gmail.com', '43.00', 'approved', '2016-11-20 02:30:39', NULL),
+(74, 'veronica.golskaya@gmail.com', '112.00', 'rejected', '2016-11-16 07:07:06', 'I don''t want to log your transaction'),
+(75, 'var@gmail.com', '123.00', 'approved', '2016-11-11 17:29:01', NULL),
+(76, 'mymail@gmail.com', '1222.00', 'approved', '2016-11-08 06:29:56', NULL);
 
 
 ALTER TABLE `transaction`
@@ -88,7 +104,7 @@ ALTER TABLE `transaction`
 
 
 ALTER TABLE `transaction`
-  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
